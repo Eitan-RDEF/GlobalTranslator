@@ -47,7 +47,7 @@ translated_*.docx
 # Build files
 build/
 dist/
-*.spec
+
 *.pyc
 __pycache__/
 *.egg-info/
