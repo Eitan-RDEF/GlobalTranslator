@@ -1,0 +1,5 @@
+# Additional requirements for building the executable
+# Install with: pip install -r build_requirements.txt
+
+pyinstaller>=6.0.0
+
