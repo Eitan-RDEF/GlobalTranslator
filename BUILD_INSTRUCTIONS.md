@@ -72,21 +72,29 @@ If you encounter import errors when running the executable:
 2. Add missing imports to the `hiddenimports` list
 3. Rebuild
 
+### pymupdf/fitz Import Errors
+
+If you see errors about `fitz` or `pymupdf`:
+1. Ensure `pymupdf` is installed: `pip install pymupdf`
+2. The spec file includes `pymupdf` and `pymupdf.fitz` in hidden imports
+3. If issues persist, try: `pip install --upgrade pymupdf`
+
 ### Streamlit Not Starting
 
 If Streamlit doesn't start:
 1. Check that `launcher.py` is included in the build
 2. Verify that Streamlit data files are collected (check `datas` in spec file)
 3. Run with console enabled to see error messages
+4. Check that port 8501 is not already in use
 
 ### Large File Size
 
 The executable will be large (100-300 MB) because it includes:
 - Python interpreter
-- All dependencies (Streamlit, OpenAI, etc.)
+- All dependencies (Streamlit, OpenAI, pymupdf, etc.)
 - All required data files
 
-This is normal for PyInstaller bundles.
+This is normal for PyInstaller bundles. The excludes list in the spec file helps reduce size by excluding unnecessary packages.
 
 ## Notes
 
